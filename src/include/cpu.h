@@ -488,9 +488,9 @@ extern uint32_t _fs;
 extern uint32_t _ss;
 extern uint32_t _err;
 extern uint32_t _eflags;
-extern uint32_t _eflags_;
+#define _eflags_ _eflags
 extern uint32_t _cr2;
-extern uint32_t PRI_RG;
+#define PRI_RG  PRIx64
 #elif __x86_64__
 #define _es     (((union g_reg *)&(scp->gregs[REG_TRAPNO]))->w[1])
 #define _ds     (((union g_reg *)&(scp->gregs[REG_TRAPNO]))->w[2])
